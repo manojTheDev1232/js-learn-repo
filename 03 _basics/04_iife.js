@@ -16,6 +16,7 @@
 
 // IIFE case
 (function chai(){
+    // named IIFE
     console.log(`DB CONNECTED`);
 })();
 
@@ -26,11 +27,13 @@
 //IIFE using arrow function
 
 ( () => {
+    //unnamed IIFE
     console.log(`DB CONNECTED TWO`);
     
 })();
 
-( () => {
-    console.log(`DB CONNECTED THREE`);
+( (name) => {
+    //Parameter IIFE
+    console.log(`DB CONNECTED ${name}`);
     
-})();
+})('hitesh');
