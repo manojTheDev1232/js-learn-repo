@@ -1,0 +1,120 @@
+> document.getElementById('title')
+<- <h1 id ="title" class="heading">DOM learning on chai and code</h1>
+
+> document.getElementById('title').id
+<- 'title'
+
+> document.getElementById('title').class
+<- undefined
+
+> document.getElementById('title').className
+<- 'heading'
+
+> document.getElementById('title').getAttribute('id')
+<- 'title'
+
+> document.getElementById('title').getAttribute('class')
+<- heading
+
+> document.getElementById('title').setAttribute('class','test')
+
+> const title = document.getElementById('title')
+
+> title.style.backgroundColor = 'green'
+
+> title.style.padding = "15px"
+
+> title.style.borderRadius = "15px"
+
+// How to add contents
+
+> title.textContent
+<- 'Dom learning on chai and code'
+
+> title.innerHTML
+<- 'Dom learning on chai and code'
+
+> title.innerText
+<- 'Dom learning on chai and code'
+
+
+<h1 id ="title" class="heading">DOM learning on chai and code
+<span style="display: none;">test text </span>
+
+</h1>
+
+> title.innerText
+<- 'Dom learning on chai and code'
+
+> title.textContent
+<- 'Dom learning on chai and code test text'
+
+> title.innerHTML
+<- 'Dom learning on chai and code <span style="display: none;">test text </span>'
+
+> document.getElementClassName('heading')
+<- HTML.Collection [h1#title.heading, title: h1#title.heading]
+
+> document.querySelector('h1') -- it will give the first h1
+< <h1 id="title" class="heading">
+"DOM learning on chai aur code"
+<span style="display: none;> test text</span>
+   </h1>
+
+> document.querySelector('#title')
+<-  <h1 id="title" class="heading"></h1>
+
+> document.querySelector('.heading')
+<-  <h1 id="title" class="heading"></h1>
+
+> document.querySelector('input[type="password"]')
+
+> document.querySelector('p:first-child')
+
+> document.querySelector('ul')
+  const myul = document.querySelector('ul)
+  myul.querySelector('li')
+
+  const turnGreen = myul.querySelector('li')
+
+  turnGreen.style.backgroundColor='green'
+
+>  green.innerText
+<  one
+
+> turnGreen.innerText ="five"
+< 'five'
+
+> document.querySelectorAll('li')
+  NodeList(3) [li,li,li]    // this is not an array, check the properties 
+                                you won't get map there, and NodeList & HTML Collections
+                                are not pure array.
+  
+const tempLiList = document.querySelectorAll('li')
+tempLiList.style.color ="green"  // wrong
+
+tempLiList[0].style.color = "green"
+
+
+
+const myH1 = document.querySelectorAll('h1')
+myH1[0].style.color = 'green'
+
+tempLiList.forEach( (l)=>{
+    l.style.backgroundColor = 'green'
+})
+
+
+const tempClassList = document.getElementByClassName('list-item')
+tempClassList.forEach(function(li) {
+    console.log(li)
+})
+
+// Here we need to convert the HTMl Collection to Array
+
+const myConvertedArray = Array.from(tempClassList)
+
+myConvertedArray.forEach(function(li){
+    li.style.color ='orange'
+})
+
